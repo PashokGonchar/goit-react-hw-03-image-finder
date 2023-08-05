@@ -42,6 +42,10 @@ export class App extends Component {
     this.fetchImages(searchText, nextPage);
   };
 
+  handleClearImages = () => {
+    this.setState({ images: [] });
+  };
+
   render() {
     const hasImages = this.state.images.length > 0;
     const hasMoreImages = this.state.images.length % 12 === 0;
@@ -58,7 +62,10 @@ export class App extends Component {
           flexDirection: 'column',
         }}
       >
-        <Searchbar handleSearch={this.handleSearch} />
+        <Searchbar
+          handleSearch={this.handleSearch}
+          handleClearImages={this.handleClearImages}
+        />
         <ImageGallery
           images={this.state.images}
           isLoading={this.state.isLoading}
