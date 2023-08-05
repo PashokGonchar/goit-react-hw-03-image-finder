@@ -1,7 +1,7 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
-import {UlGallery} from './ImageGallery.styled'
+import { UlGallery } from './ImageGallery.styled';
 
-const ImageGallery = (props) => {
+const ImageGallery = props => {
   return (
     <>
       <UlGallery>

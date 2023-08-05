@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 
@@ -7,7 +7,7 @@ export class App extends Component {
     searchText: '',
   };
 
-  handleSearch = (searchText) => {
+  handleSearch = searchText => {
     this.setState({ searchText });
   };
 
@@ -21,7 +21,7 @@ export class App extends Component {
           fontSize: 40,
           color: '#010101',
           lineHeight: 0,
-          flexDirection:'column'
+          flexDirection: 'column',
         }}
       >
         <Searchbar handleSearch={this.handleSearch} />

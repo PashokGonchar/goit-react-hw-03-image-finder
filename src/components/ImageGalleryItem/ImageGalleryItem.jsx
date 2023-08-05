@@ -1,6 +1,6 @@
 import { getImages } from 'api/imagesApi';
 
-const { Component } = require('react');
+import React, { Component } from 'react';
 
 class ImageGalleryItem extends Component {
   state = {
