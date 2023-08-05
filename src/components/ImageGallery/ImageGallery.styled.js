@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export const UlGallery = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  grid-gap: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
 `;
