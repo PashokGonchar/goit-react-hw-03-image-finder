@@ -10,6 +10,7 @@ class Searchbar extends Component {
   handleChange = ({ target: { value } }) => {
     this.setState({ value });
   };
+  
 
   handleSubmit = (e) => {
     e.preventDefault();

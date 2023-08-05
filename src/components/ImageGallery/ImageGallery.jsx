@@ -1,12 +1,15 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import { UlGallery } from './ImageGallery.styled';
 
-const ImageGallery = props => {
-
+const ImageGallery = ({ images, isLoading, searchText }) => {
   return (
     <>
       <UlGallery>
-        <ImageGalleryItem searchText={props.searchText} />
+        <ImageGalleryItem
+          images={images}
+          isLoading={isLoading}
+          searchText={searchText}
+        />
       </UlGallery>
     </>
   );
