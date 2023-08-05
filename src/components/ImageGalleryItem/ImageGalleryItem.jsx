@@ -86,7 +86,9 @@ class ImageGalleryItem extends Component {
               </li>
             );
           })}
-        {hasImages && hasMoreImages && <Button onClick={this.handleLoadMore} />}
+        {hasImages && hasMoreImages && (
+          <Button onClick={this.handleLoadMore} />
+        )}
         {isModalOpen && (
           <Modal imageUrl={selectedImageUrl} onClose={this.handleCloseModal} />
         )}

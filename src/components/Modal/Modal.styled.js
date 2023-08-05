@@ -13,8 +13,8 @@ export const OverlayDiv = styled.div`
 `;
 
 export const ModalDiv = styled.div`
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 export const ImageModal = styled.img`
