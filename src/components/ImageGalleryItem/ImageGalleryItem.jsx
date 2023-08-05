@@ -2,27 +2,39 @@ import { getImages } from 'api/imagesApi';
 
 const { Component } = require('react');
 
-class CreateImageGallery extends Component {
-  state = {};
+class ImageGalleryItem extends Component {
+  state = {
+    images : []
+  };
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.props);
     if (prevProps.searchText !== this.props.searchText) {
-      getImages(this.props.searchText);
+      getImages(this.props.searchText)
+        .then(response => response.json())
+        .then(data => this.setState({ images: data.hits }));
     }
   }
 
   render() {
+    const { images } = this.state;
     return (
-      <li
-        style={{
-          listStyle: 'none',
-        }}
-      >
-        <img src="" alt="" />
-      </li>
+      <>
+        {images.map(el => {
+          return (
+            <li
+              key={el.id}
+              style={{
+                listStyle: 'none',
+              }}
+              id={el.id}
+            >
+              <img src={el.webformatURL} alt={el.tags} />
+            </li>
+          );
+        })}
+      </>
     );
   }
 }
 
-export default CreateImageGallery;
+export default ImageGalleryItem;

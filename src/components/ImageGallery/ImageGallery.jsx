@@ -1,11 +1,12 @@
-import CreateImageGallery from "components/ImageGalleryItem/ImageGalleryItem";
+import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+import {UlGallery} from './ImageGallery.styled'
 
 const ImageGallery = (props) => {
   return (
     <>
-      <ul className="gallery">
-        <CreateImageGallery searchText={props.searchText} />
-      </ul>
+      <UlGallery>
+        <ImageGalleryItem searchText={props.searchText} />
+      </UlGallery>
     </>
   );
 };

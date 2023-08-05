@@ -2,7 +2,7 @@ import { HeaderSearch,FormSearch, ButtonSearch, InputSearch } from './Searchbar.
 
 const { Component } = require('react');
 
-class Search extends Component {
+class Searchbar extends Component {
   state = {
     value: '',
   };
@@ -15,6 +15,8 @@ class Search extends Component {
     e.preventDefault();
     this.props.handleSearch(this.state.value)
   };
+
+
   render() {
     return (
       <HeaderSearch>
@@ -37,4 +39,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default Searchbar;

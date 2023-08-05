@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Search from './Searchbar/Searchbar';
+import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 
 export class App extends Component {
@@ -21,9 +21,10 @@ export class App extends Component {
           fontSize: 40,
           color: '#010101',
           lineHeight: 0,
+          flexDirection:'column'
         }}
       >
-        <Search handleSearch={this.handleSearch} />
+        <Searchbar handleSearch={this.handleSearch} />
         <ImageGallery searchText={this.state.searchText} />
       </div>
     );
