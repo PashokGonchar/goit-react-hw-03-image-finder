@@ -1,5 +1,6 @@
 import { getImages } from 'api/imagesApi';
 import Button from 'components/Button/Button';
+import { Loader } from 'components/Loader/Loader';
 
 import React, { Component } from 'react';
 
@@ -7,17 +8,23 @@ class ImageGalleryItem extends Component {
   state = {
     images: [],
     page: 1,
-    perPage : 12,
+    perPage: 12,
+    isLoading: false,
   };
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.searchText !== this.props.searchText) {
+            this.setState({
+              images: [], 
+              page: 1, 
+            });
       this.fetchImages(this.props.searchText, 1);
     }
   }
 
   fetchImages = (searchText, page) => {
     const { perPage } = this.state;
+    this.setState({ isLoading: true });
     getImages(searchText, page, perPage)
       .then(response => response.json())
       .then(data => {
@@ -25,6 +32,11 @@ class ImageGalleryItem extends Component {
           images: prevState.images.concat(data.hits),
           page: page,
         }));
+      })
+      .finally(() => {
+        this.setState({
+          isLoading: false,
+        });
       });
   };
 
@@ -36,12 +48,13 @@ class ImageGalleryItem extends Component {
   };
 
   render() {
-    const { images } = this.state;
+    const { images, isLoading } = this.state;
     const hasImages = images.length > 0;
     const hasMoreImages = images.length % 12 === 0;
 
     return (
       <>
+        {isLoading && <Loader/>}
         {images &&
           images.map(el => {
             return (
@@ -56,7 +69,7 @@ class ImageGalleryItem extends Component {
               </li>
             );
           })}
-        {hasImages && hasMoreImages &&  <Button onClick={this.handleLoadMore} />}
+        {hasImages && hasMoreImages && <Button onClick={this.handleLoadMore} />}
       </>
     );
   }
