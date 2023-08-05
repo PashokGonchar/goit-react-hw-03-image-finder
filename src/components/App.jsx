@@ -18,7 +18,7 @@ export class App extends Component {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 40,
+          fontSize: 20,
           color: '#010101',
           lineHeight: 0,
           flexDirection: 'column',

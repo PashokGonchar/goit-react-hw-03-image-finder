@@ -1,5 +1,4 @@
 import { getImages } from 'api/imagesApi';
-// import Button from 'components/Button/Button';
 
 import React, { Component } from 'react';
 
@@ -37,8 +36,6 @@ class ImageGalleryItem extends Component {
 
   render() {
     const { images } = this.state;
-    // const hasImages = images.length > 0;
-    // const hasMoreImages = images.length % 12 === 0;
 
     return (
       <>
@@ -56,7 +53,6 @@ class ImageGalleryItem extends Component {
               </li>
             );
           })}
-        {/* {hasImages && hasMoreImages &&  <Button onClick={this.handleLoadMore} />} */}
       </>
     );
   }
