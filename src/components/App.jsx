@@ -37,9 +37,9 @@ export class App extends Component {
   };
 
   handleLoadMore = () => {
-    const { searchText, page } = this.state;
-    const nextPage = page + 1;
-    this.fetchImages(searchText, nextPage);
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }));
   };
 
   handleClearImages = () => {

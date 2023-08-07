@@ -21,12 +21,6 @@ class ImageGalleryItem extends Component {
     });
   };
 
-  handleLoadMore = () => {
-    this.setState(prevState => ({
-      page: prevState.page + 1,
-    }));
-  };
-
   render() {
     const { isLoading, images } = this.props;
     const { isModalOpen, selectedImageUrl } = this.state;
