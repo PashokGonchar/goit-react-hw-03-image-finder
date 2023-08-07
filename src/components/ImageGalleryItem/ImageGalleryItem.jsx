@@ -15,10 +15,10 @@ class ImageGalleryItem extends Component {
     });
   };
 
-  handleCloseModal = () => {
-    this.setState({
-      isModalOpen: false,
-    });
+  handleLoadMore = () => {
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }));
   };
 
   render() {
