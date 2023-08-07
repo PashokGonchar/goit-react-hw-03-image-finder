@@ -36,6 +36,12 @@ export class App extends Component {
       });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.page !== this.state.page) {
+      this.fetchImages(this.state.searchText, this.state.page);
+    }
+  }
+
   handleLoadMore = () => {
     this.setState(prevState => ({
       page: prevState.page + 1,

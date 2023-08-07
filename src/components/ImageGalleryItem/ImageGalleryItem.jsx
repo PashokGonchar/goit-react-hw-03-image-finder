@@ -21,6 +21,7 @@ class ImageGalleryItem extends Component {
     });
   };
 
+
   render() {
     const { isLoading, images } = this.props;
     const { isModalOpen, selectedImageUrl } = this.state;
